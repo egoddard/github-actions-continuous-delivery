@@ -27,7 +27,7 @@ jobs:
     
     test:
         runs-on: ubuntu-latest
-        needs: ${{ matrix.code_location }}
+        needs: build
         strategy:
           matrix:
             code_location: ${{ fromJson(needs.build.outputs.outputs) }}
